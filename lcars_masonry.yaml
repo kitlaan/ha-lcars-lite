@@ -1,0 +1,194 @@
+TEST LCARS (Masonry):
+  # THEME COLORS
+  lcars-left-color: "#9996ba"
+  lcars-top-color: "#ffaa00"
+  lcars-bottom-color: "#aaaaff"
+  lcars-cap-color: "#7788ff"
+  lcars-bar-button-color: "#631d25"
+
+  lcars-section-button-color: var(--lcars-bar-button-color)
+
+  # CARD colors can be customized (not the wrapping panel colors)
+  # by using class `lcars-bar` and style `--lcars-section-bar-color`.
+  #   card_mod:
+  #     class: lcars-bar
+  #     style: ":host { --lcars-section-bar-color: green; }"
+
+  my-info-bar-color: "#b788dd"
+
+  # SIZES OF LCARS BORDERS
+  lcars-left-border: 32px
+  lcars-top-border: 10px
+  lcars-bottom-border: 5px
+  lcars-outer-radius: 24px
+  lcars-inner-radius: 14px
+  lcars-padding: 6px
+
+  #
+  # SPECIFICALLY TUNED RULES AFTER THIS POINT
+  #
+
+  ha-heading-card-subtitle-color: var(--secondary-text-color)
+  ha-heading-card-title-font-size: 28px
+  ha-heading-card-subtitle-font-size: 20px
+  ha-heading-card-title-line-height: 36px
+
+  ha-card-border-radius: 8px
+  ha-card-border-width: 1px
+  ha-card-border-color: var(--divider-color)
+  ha-card-border-style: solid
+
+  primary-font-family: Antonio
+  paper-font-common-base_-_font-family: var(--primary-font-family)
+  paper-font-common-code_-_font-family: var(--primary-font-family)
+  paper-font-body1_-_font-family: var(--primary-font-family)
+  paper-font-body1_-_font-size: 16.8px
+  paper-font-subhead_-_font-family: var(--primary-font-family)
+  paper-font-headline_-_font-family: var(--primary-font-family)
+  paper-font-caption_-_font-family: var(--primary-font-family)
+  paper-font-title_-_font-family: var(--primary-font-family)
+  ha-card-header-font-family: var(--primary-font-family)
+  mdc-typography-body1-font-family: var(--primary-font-family)
+  mdc-typography-font-family: var(--primary-font-family)
+
+  card-mod-theme: "TEST LCARS (Masonry)"
+
+  card-mod-card-yaml: |
+    .: |
+      :host {
+        .lcars-bar {
+          background-color: var(--lcars-section-bar-color, var(--lcars-bar-color));
+          border-radius: 0;
+        }
+      }
+      :host(big-slider-card) {
+        --ha-card-height: 60px;
+        --bsc-background: var(--lcars-section-button-color);
+        --bsc-primary-text-color: var(--lcars-section-button-text-color);
+        --bsc-off-color: var(--lovelace-background);
+        #label { text-transform: uppercase; }
+      }
+      :host(hui-button-card) {
+        --ha-card-background: var(--lcars-section-button-color);
+        ha-card {
+          min-height: 52px;
+          padding: 4px 0 !important;
+          text-transform: uppercase; font-weight: bold;
+          ha-state-icon { max-height: 60%; }
+        }
+      }
+      :host(hui-entities-card) {
+        .card-content { padding: 3px 12px; }
+      }
+      :host(hui-heading-card) {
+        --mdc-icon-size: 50px;
+        :is(.title, .subtitle) {
+          text-transform: uppercase; font-weight: bold;
+          p { font-family: var(--primary-font-family) !important; }
+        }
+        .container { padding: 0; min-height: var(--lcars-padding); }
+        .title { --mdc-icon-size: var(--ha-heading-card-title-font-size); }
+        .subtitle { --mdc-icon-size: var(--ha-heading-card-subtitle-font-size); }
+        .content { background-color: var(--lovelace-background); padding-right: var(--lcars-padding); min-width: unset; }
+        .badges { padding-right: 6px; }
+        ha-card.badges-left .container { justify-content: flex-start; }
+      }
+      :host(mini-media-player) {
+        .mmp-player { padding: 6px 3px; }
+        .entity__info__name { text-transform: uppercase; font-size: var(--ha-heading-card-subtitle-font-size); }
+      }
+    ha-tile-info $: |
+      .primary { text-transform: uppercase; }
+      .secondary { font-family: var(--paper-font-body2_-_font-family); }
+    hui-entity-heading-badge $:
+      ha-heading-badge $: |
+        :host { color: var(--badge-text-color, var(--secondary-text-color)) !important; }
+        .heading-badge { _font-family: var(--primary-font-family) !important; }
+    hui-button-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-climate-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-cover-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-number-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-sensor-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-simple-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-toggle-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-update-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+
+  card-mod-view-yaml: |
+    hui-masonry-view $:
+      .: |
+        :host {
+          font-family: var(--paper-font-body1_-_font-family);
+          font-size: var(--paper-font-body1_-_font-size);
+          font-weight: var(--paper-font-body1_-_font-weight);
+          line-height: var(--paper-font-body1_-_line-height);
+        }
+        .column { padding: 0 6px; }
+        hui-card:not(:has(hui-vertical-stack-card)) {
+          --lcars-bar-color: var(--lcars-cap-color);
+          --badge-text-color: black;
+          border: solid var(--lcars-cap-color);
+          border-width: 0 var(--lcars-left-border);
+          border-radius: var(--lcars-outer-radius);
+          background-color: var(--lcars-bar-color);
+          > * {
+            display: block; box-sizing: border-box;
+            border-radius: 0;
+            border-style: solid; border-color: var(--lovelace-background);
+            border-width: 0 var(--lcars-padding);
+            --ha-card-border-radius: 0;
+          }
+        }
+      hui-vertical-stack-card $:
+        .: |
+          hui-card {
+            --lcars-section-bar-color: var(--lcars-left-color);
+            border-left: var(--lcars-left-border) solid var(--lcars-left-color);
+            border-radius: 0 !important;
+            padding-left: var(--lcars-padding);
+            position: relative;
+          }
+          hui-card:nth-child(1 of hui-card:has(:not([hidden]))) {
+            --lcars-section-bar-color: var(--lcars-top-color);
+            border-left: var(--lcars-left-border) solid var(--lcars-top-color);
+            border-top: calc(var(--lcars-top-border) + var(--lcars-inner-radius)) solid var(--lcars-top-color);
+            border-top-left-radius: var(--lcars-outer-radius) !important;
+            > *::before {
+              content: ''; position: absolute; top: 0; left: 0;
+              border-top: var(--lcars-inner-radius) solid var(--lovelace-background);
+              border-left: var(--lcars-inner-radius) solid var(--lovelace-background);
+              border-top-left-radius: var(--lcars-inner-radius);
+              margin-top: calc(-1 * var(--lcars-inner-radius) + 1px);
+              width: calc(100% - var(--lcars-inner-radius) + 1px);
+            }
+          }
+          hui-card:nth-last-child(1 of hui-card:has(:not([hidden]))) {
+            --lcars-section-bar-color: var(--lcars-bottom-color);
+            border-left: var(--lcars-left-border) solid var(--lcars-bottom-color);
+            border-bottom: calc(var(--lcars-bottom-border) + var(--lcars-inner-radius)) solid var(--lcars-bottom-color);
+            border-bottom-left-radius: var(--lcars-outer-radius) !important;
+            padding-bottom: 1px;
+            > *::after {
+              content: ''; position: absolute; bottom: 0; left: 0;
+              border-bottom: var(--lcars-inner-radius) solid var(--lovelace-background);
+              border-left: var(--lcars-inner-radius) solid var(--lovelace-background);
+              border-bottom-left-radius: var(--lcars-inner-radius);
+              margin-bottom: calc(-1 * var(--lcars-inner-radius) + 1px);
+              width: calc(100% - var(--lcars-inner-radius) + 1px);
+            }
+          }

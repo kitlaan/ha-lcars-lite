@@ -1,0 +1,206 @@
+TEST LCARS (Sections):
+  # THEME COLORS
+  lcars-left-color: "#9996ba"
+  lcars-top-color: "#ffaa00"
+  lcars-bottom-color: "#aaaaff"
+  lcars-cap-color: "#7788ff"
+  # THESE COLORS can be customized within card-mod:
+  lcars-bar-button-color: "#631d25"
+  lcars-bar-button-text-color: "#f1f1f1"
+  lcars-section-button-color: var(--lcars-bar-button-color)
+  lcars-section-button-text-color: var(--lcars-bar-button-text-color)
+
+  # CARD features can be customized (not the wrapping panel colors)
+  # by using class `lcars-bar` and style `--lcars-section-bar-color`.
+  # For example, to make the background...
+  #   card_mod:
+  #     class: lcars-bar
+  #     style: ":host { --lcars-section-bar-color: green; }"
+
+  my-info-bar-color: "#b788dd"
+
+  # SIZES OF LCARS BORDERS
+  lcars-left-border: 32px
+  lcars-top-border: 10px
+  lcars-bottom-border: 5px
+  lcars-outer-radius: 24px
+  lcars-inner-radius: 14px
+  lcars-padding: 6px
+
+  #
+  # SPECIFICALLY TUNED RULES AFTER THIS POINT
+  #
+
+  ha-heading-card-subtitle-color: var(--secondary-text-color)
+  ha-heading-card-title-font-size: 28px
+  ha-heading-card-subtitle-font-size: 20px
+  ha-heading-card-title-line-height: 36px
+
+  ha-card-border-radius: 8px
+  ha-card-border-width: 1px
+  ha-card-border-color: var(--divider-color)
+  ha-card-border-style: solid
+
+  ha-view-sections-column-gap: 12px
+  ha-section-grid-row-gap: var(--lcars-padding)
+  ha-section-grid-column-gap: var(--lcars-padding)
+
+  primary-font-family: Antonio
+  paper-font-common-base_-_font-family: var(--primary-font-family)
+  paper-font-common-code_-_font-family: var(--primary-font-family)
+  paper-font-body1_-_font-family: var(--primary-font-family)
+  paper-font-body1_-_font-size: 16.8px
+  paper-font-subhead_-_font-family: var(--primary-font-family)
+  paper-font-headline_-_font-family: var(--primary-font-family)
+  paper-font-caption_-_font-family: var(--primary-font-family)
+  paper-font-title_-_font-family: var(--primary-font-family)
+  ha-card-header-font-family: var(--primary-font-family)
+  mdc-typography-body1-font-family: var(--primary-font-family)
+  mdc-typography-font-family: var(--primary-font-family)
+
+  card-mod-theme: "TEST LCARS (Sections)"
+
+  card-mod-card-yaml: |
+    .: |
+      :host {
+        .lcars-bar {
+          background-color: var(--lcars-section-bar-color, var(--lcars-bar-color));
+          border-radius: 0;
+        }
+      }
+      :host(big-slider-card) {
+        --ha-card-height: 60px;
+        --bsc-background: var(--lcars-section-button-color);
+        --bsc-primary-text-color: var(--lcars-section-button-text-color);
+        --bsc-off-color: var(--lovelace-background);
+        #label { text-transform: uppercase; }
+      }
+      :host(hui-button-card) {
+        --ha-card-background: var(--lcars-section-button-color);
+        ha-card {
+          min-height: 52px;
+          padding: 4px 0 !important;
+          text-transform: uppercase; font-weight: bold;
+          ha-state-icon { max-height: 60%; }
+        }
+      }
+      :host(hui-entities-card) {
+        .card-content { padding: 3px 12px; }
+      }
+      :host(hui-heading-card) {
+        --mdc-icon-size: 50px;
+        :is(.title, .subtitle) {
+          text-transform: uppercase; font-weight: bold;
+          p { font-family: var(--primary-font-family) !important; }
+        }
+        .container { padding: 0; min-height: var(--lcars-padding); }
+        .title { --mdc-icon-size: var(--ha-heading-card-title-font-size); }
+        .subtitle { --mdc-icon-size: var(--ha-heading-card-subtitle-font-size); }
+        .content { background-color: var(--lovelace-background); padding-right: var(--lcars-padding); min-width: unset; }
+        .badges { padding-right: 6px; }
+        ha-card.badges-left .container { justify-content: flex-start; }
+      }
+      :host(mini-media-player) {
+        .mmp-player { padding: 6px 3px; }
+        .entity__info__name { text-transform: uppercase; font-size: var(--ha-heading-card-subtitle-font-size); }
+      }
+    ha-tile-info $: |
+      .primary { text-transform: uppercase; }
+      .secondary { font-family: var(--paper-font-body2_-_font-family); }
+    hui-entity-heading-badge $:
+      ha-heading-badge $: |
+        :host { color: var(--badge-text-color, var(--secondary-text-color)) !important; }
+        .heading-badge { _font-family: var(--primary-font-family) !important; }
+    hui-button-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-climate-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-cover-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-number-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-sensor-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-simple-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-toggle-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+    hui-update-entity-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
+
+  card-mod-view-yaml: |
+    hui-sections-view $:
+      hui-grid-section $:
+        .: |
+          .card.fit-rows:has(hui-heading-card) { height: unset; }
+          .card.fit-rows:has(hui-grid-card) { height: unset; }
+          .container:has(.card:only-of-type, .card:not(.full-width)) {
+            --lcars-bar-color: var(--lcars-cap-color);
+            --badge-text-color: black;
+            --column-gap: 0;
+            border: solid var(--lcars-cap-color);
+            border-width: 0 var(--lcars-left-border);
+            border-radius: var(--lcars-outer-radius);
+            background-color: var(--lcars-bar-color);
+            .card {
+              border-radius: 0;
+              border-style: solid; border-color: var(--lovelace-background);
+              border-width: 0 calc(var(--lcars-padding) * 0.5);
+              --ha-card-border-radius: 0;
+            }
+            .card:first-of-type { border-left-width: var(--lcars-padding); }
+            .card:last-of-type { border-right-width: var(--lcars-padding); }
+            hui-button-card { --ha-card-background: var(--lcars-bar-button-color); --primary-text-color: var(--lcars-bar-button-text-color); }
+          }
+          .container:not(:has(.card:only-of-type, .card:not(.full-width))) {
+            .card {
+              --lcars-section-bar-color: var(--lcars-left-color);
+              border-left: var(--lcars-left-border) solid var(--lcars-left-color);
+              border-radius: 0 !important;
+              padding-left: var(--lcars-padding);
+            }
+            .card:nth-child(1 of .card:has(:not([hidden]))) {
+              --lcars-section-bar-color: var(--lcars-top-color);
+              border-left: var(--lcars-left-border) solid var(--lcars-top-color);
+              border-top: calc(var(--lcars-top-border) + var(--lcars-inner-radius)) solid var(--lcars-top-color);
+              border-top-left-radius: var(--lcars-outer-radius) !important;
+              hui-card::before {
+                content: ''; position: absolute; top: 0; left: 0;
+                border-top: var(--lcars-inner-radius) solid var(--lovelace-background);
+                border-left: var(--lcars-inner-radius) solid var(--lovelace-background);
+                border-top-left-radius: var(--lcars-inner-radius);
+                margin-top: calc(-1 * var(--lcars-inner-radius) + 1px);
+                width: calc(100% - var(--lcars-inner-radius) + 1px);
+              }
+            }
+            .card:nth-last-child(1 of .card:has(:not([hidden]))) {
+              --lcars-section-bar-color: var(--lcars-bottom-color);
+              border-left: var(--lcars-left-border) solid var(--lcars-bottom-color);
+              border-bottom: calc(var(--lcars-bottom-border) + var(--lcars-inner-radius)) solid var(--lcars-bottom-color);
+              border-bottom-left-radius: var(--lcars-outer-radius) !important;
+              padding-bottom: 1px;
+              hui-card::after {
+                content: ''; position: absolute; bottom: 0; left: 0;
+                border-bottom: var(--lcars-inner-radius) solid var(--lovelace-background);
+                border-left: var(--lcars-inner-radius) solid var(--lovelace-background);
+                border-bottom-left-radius: var(--lcars-inner-radius);
+                margin-bottom: calc(-1 * var(--lcars-inner-radius) + 1px);
+                width: calc(100% - var(--lcars-inner-radius) + 1px);
+              }
+            }
+          }
+        hui-grid-card $: |
+          #root {
+            background-color: var(--lovelace-background);
+            * { background-color: var(--lcars-bar-color); }
+          }
+      hui-view-badges $: |
+        :host { margin: 8px 8px 0 !important; }
