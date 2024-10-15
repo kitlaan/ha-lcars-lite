@@ -1,4 +1,4 @@
-TEST LCARS (Sections):
+LCARS-Lite (Sections):
   # THEME COLORS
   lcars-left-color: "#9996ba"
   lcars-top-color: "#ffaa00"
@@ -58,7 +58,7 @@ TEST LCARS (Sections):
   mdc-typography-body1-font-family: var(--primary-font-family)
   mdc-typography-font-family: var(--primary-font-family)
 
-  card-mod-theme: "TEST LCARS (Sections)"
+  card-mod-theme: "LCARS-Lite (Sections)"
 
   card-mod-card-yaml: |
     .: |

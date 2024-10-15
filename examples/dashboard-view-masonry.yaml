@@ -1,0 +1,124 @@
+#
+# "Masonry View" Dashboard Example
+#
+# Use the `vertical-stack` card to group multiple cards together into
+# a "LCARS Panel".
+#
+title: Masonry Example
+path: masonry
+theme: LCARS-Lite (Masonry)
+cards:
+  #
+  # Example: Bigger Bar via a single `heading` card.
+  # Useful for dividing sections of your dashboard, with optional badges.
+  #
+  - type: heading
+    icon: ''
+    heading: Just Header
+    heading_style: title
+    badges:
+      - type: entity
+        entity: sensor.allergy_index_today
+  #
+  # Example: Smaller Bar via s single `heading` card (with custom color).
+  # Useful for dividing sections of your dashboard, with optional badges.
+  #
+  - type: heading
+    icon: mdi:subtitles
+    heading: Subtitle & card-mod
+    heading_style: subtitle
+    badges:
+      - type: entity
+        entity: sensor.allergy_index_tomorrow
+    card_mod:
+      class: lcars-bar
+      style: ':host { --lcars-section-bar-color: green; }'
+  #
+  # Example: Smaller Bar of just badges (aligned left).
+  # Useful for showing badges in a small vertical space.
+  #
+  - type: heading
+    icon: ''
+    heading: ''
+    heading_style: subtitle
+    badges:
+      - type: entity
+        entity: sensor.allergy_index_tomorrow
+    card_mod:
+      class: badges-left
+  #
+  # Example: Button Bar
+  # It's a button (with custom color)!
+  #
+  - show_name: true
+    show_icon: false
+    type: button
+    tap_action:
+      action: toggle
+    entity: light.basement_main_lights
+    name: Toggle Basement Light
+    show_state: true
+    card_mod:
+      style: ":host { --lcars-bar-button-color: green; }"
+  #
+  # Example: LCARS Panel
+  #
+  - type: vertical-stack
+    cards:
+      - type: heading
+        icon: ''
+        heading: Header
+        heading_style: title
+      - type: entity
+        entity: sensor.allergy_index_today
+      - type: heading
+        icon: ''
+        heading_style: subtitle
+        card_mod:
+          class: lcars-bar
+          style: ':host { --lcars-section-bar-color: green }'
+      - square: false
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: light.basement_light
+            name: Basement Light
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: light.basement_light
+            name: Basement Light
+        columns: 2
+      - type: heading
+        icon: ''
+        heading: Footer
+        heading_style: subtitle
+  #
+  # Example: LCARS Panel
+  #
+  - type: vertical-stack
+    cards:
+      - type: heading
+        icon: mdi:fridge
+        heading_style: title
+        heading: Header with Stuff
+        badges:
+          - type: entity
+            entity: sensor.allergy_index_today
+      - type: entity
+        entity: sensor.basement_temperature
+  #
+  # Example: Thick Bar of Entities
+  #
+  - type: entities
+    entities:
+      - entity: light.basement_main_lights
+        name: Basement Light
+      - entity: sensor.basement_temperature
+      - entity: cover.living_room_window

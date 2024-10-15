@@ -1,10 +1,12 @@
-# LCARS
+# LCARS-Lite
 
 This is a **lightweight** Home Assistant theme featuring a vague Star Trek
 TNG LCARS feel.
 
 This theme tries to avoid major customizations of your dashboard to support
 the styling, doing most of the work via theme-internal `card-mod` rules.
+
+![Dashboard Example](docs/dashboard-example.png)
 
 For a more full-featured theme, see [th3jesta/ha-lcars][th3jesta].
 Thanks to [TheLCARS][thelcars] for styling notes.
@@ -50,7 +52,7 @@ With the corresponding folder layout:
 
 ```
 themes/
-    lcars/
+    lcars-lite/
         lcars_masonry.yaml
         lcars_sections.yaml
 ```
@@ -76,11 +78,13 @@ https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap
 There are variants of the theme, to be used by the dashboard
 view type:
 
-* LCARS (Masonry) -- `lcars_masonry.yaml`
-* LCARS (Sections) -- `lcars_sections.yaml`
+* LCARS-Lite (Masonry) -- `lcars_masonry.yaml`
+* LCARS-Lite (Sections) -- `lcars_sections.yaml`
 
 To customize colors, edit the theme colors at the top of the
 `yaml` file(s).
+
+For example usage in a dashboard, see the `examples` folder.
 
 ### Sections View Notes
 
