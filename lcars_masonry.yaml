@@ -104,6 +104,9 @@ LCARS-Lite (Masonry):
       ha-heading-badge $: |
         :host { color: var(--badge-text-color, var(--secondary-text-color)) !important; }
         .heading-badge { _font-family: var(--primary-font-family) !important; }
+    hui-attribute-row $:
+      hui-generic-entity-row $: |
+        .info { text-transform: uppercase; .secondary { text-transform: none; } }
     hui-button-entity-row $:
       hui-generic-entity-row $: |
         .info { text-transform: uppercase; .secondary { text-transform: none; } }
