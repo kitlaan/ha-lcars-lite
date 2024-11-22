@@ -65,7 +65,7 @@ LCARS-Lite (Masonry):
         --ha-card-height: 60px;
         --bsc-background: var(--lcars-section-button-color);
         --bsc-primary-text-color: var(--lcars-section-button-text-color);
-        --bsc-off-color: var(--lovelace-background);
+        --bsc-off-color: var(--clear-background-color);
         #label { text-transform: uppercase; }
       }
       :host(hui-button-card) {
@@ -89,7 +89,7 @@ LCARS-Lite (Masonry):
         .container { padding: 0; min-height: var(--lcars-padding); }
         .title { --mdc-icon-size: var(--ha-heading-card-title-font-size); }
         .subtitle { --mdc-icon-size: var(--ha-heading-card-subtitle-font-size); }
-        .content { background-color: var(--lovelace-background); padding-right: var(--lcars-padding); min-width: unset; }
+        .content { background-color: var(--clear-background-color); padding-right: var(--lcars-padding); min-width: unset; }
         .badges { padding-right: 6px; }
         ha-card.badges-left .container { justify-content: flex-start; }
       }
@@ -149,7 +149,7 @@ LCARS-Lite (Masonry):
           > * {
             display: block; box-sizing: border-box;
             border-radius: 0;
-            border-style: solid; border-color: var(--lovelace-background);
+            border-style: solid; border-color: var(--clear-background-color);
             border-width: 0 var(--lcars-padding);
             --ha-card-border-radius: 0;
           }
@@ -170,8 +170,8 @@ LCARS-Lite (Masonry):
             border-top-left-radius: var(--lcars-outer-radius) !important;
             > *::before {
               content: ''; position: absolute; top: 0; left: 0;
-              border-top: var(--lcars-inner-radius) solid var(--lovelace-background);
-              border-left: var(--lcars-inner-radius) solid var(--lovelace-background);
+              border-top: var(--lcars-inner-radius) solid var(--clear-background-color);
+              border-left: var(--lcars-inner-radius) solid var(--clear-background-color);
               border-top-left-radius: var(--lcars-inner-radius);
               margin-top: calc(-1 * var(--lcars-inner-radius) + 1px);
               width: calc(100% - var(--lcars-inner-radius) + 1px);
@@ -185,8 +185,8 @@ LCARS-Lite (Masonry):
             padding-bottom: 1px;
             > *::after {
               content: ''; position: absolute; bottom: 0; left: 0;
-              border-bottom: var(--lcars-inner-radius) solid var(--lovelace-background);
-              border-left: var(--lcars-inner-radius) solid var(--lovelace-background);
+              border-bottom: var(--lcars-inner-radius) solid var(--clear-background-color);
+              border-left: var(--lcars-inner-radius) solid var(--clear-background-color);
               border-bottom-left-radius: var(--lcars-inner-radius);
               margin-bottom: calc(-1 * var(--lcars-inner-radius) + 1px);
               width: calc(100% - var(--lcars-inner-radius) + 1px);

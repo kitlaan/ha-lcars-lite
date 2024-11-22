@@ -72,7 +72,7 @@ LCARS-Lite (Sections):
         --ha-card-height: 60px;
         --bsc-background: var(--lcars-section-button-color);
         --bsc-primary-text-color: var(--lcars-section-button-text-color);
-        --bsc-off-color: var(--lovelace-background);
+        --bsc-off-color: var(--clear-background-color);
         #label { text-transform: uppercase; }
       }
       :host(hui-button-card) {
@@ -96,7 +96,7 @@ LCARS-Lite (Sections):
         .container { padding: 0; min-height: var(--lcars-padding); }
         .title { --mdc-icon-size: var(--ha-heading-card-title-font-size); }
         .subtitle { --mdc-icon-size: var(--ha-heading-card-subtitle-font-size); }
-        .content { background-color: var(--lovelace-background); padding-right: var(--lcars-padding); min-width: unset; }
+        .content { background-color: var(--clear-background-color); padding-right: var(--lcars-padding); min-width: unset; }
         .badges { padding-right: 6px; }
         ha-card.badges-left .container { justify-content: flex-start; }
       }
@@ -109,7 +109,6 @@ LCARS-Lite (Sections):
       .secondary { font-family: var(--paper-font-body2_-_font-family); }
     hui-entity-heading-badge $:
       ha-heading-badge $: |
-        :host { color: var(--badge-text-color, var(--secondary-text-color)) !important; }
         .heading-badge { _font-family: var(--primary-font-family) !important; }
     hui-button-entity-row $:
       hui-generic-entity-row $: |
@@ -144,7 +143,7 @@ LCARS-Lite (Sections):
           .card.fit-rows:has(hui-grid-card) { height: unset; }
           .container:has(.card:only-of-type, .card:not(.full-width)) {
             --lcars-bar-color: var(--lcars-cap-color);
-            --badge-text-color: black;
+            --ha-heading-badge-text-color: black;
             --column-gap: 0;
             border: solid var(--lcars-cap-color);
             border-width: 0 var(--lcars-left-border);
@@ -152,7 +151,7 @@ LCARS-Lite (Sections):
             background-color: var(--lcars-bar-color);
             .card {
               border-radius: 0;
-              border-style: solid; border-color: var(--lovelace-background);
+              border-style: solid; border-color: var(--clear-background-color);
               border-width: 0 calc(var(--lcars-padding) * 0.5);
               --ha-card-border-radius: 0;
             }
@@ -174,8 +173,8 @@ LCARS-Lite (Sections):
               border-top-left-radius: var(--lcars-outer-radius) !important;
               hui-card::before {
                 content: ''; position: absolute; top: 0; left: 0;
-                border-top: var(--lcars-inner-radius) solid var(--lovelace-background);
-                border-left: var(--lcars-inner-radius) solid var(--lovelace-background);
+                border-top: var(--lcars-inner-radius) solid var(--clear-background-color);
+                border-left: var(--lcars-inner-radius) solid var(--clear-background-color);
                 border-top-left-radius: var(--lcars-inner-radius);
                 margin-top: calc(-1 * var(--lcars-inner-radius) + 1px);
                 width: calc(100% - var(--lcars-inner-radius) + 1px);
@@ -189,8 +188,8 @@ LCARS-Lite (Sections):
               padding-bottom: 1px;
               hui-card::after {
                 content: ''; position: absolute; bottom: 0; left: 0;
-                border-bottom: var(--lcars-inner-radius) solid var(--lovelace-background);
-                border-left: var(--lcars-inner-radius) solid var(--lovelace-background);
+                border-bottom: var(--lcars-inner-radius) solid var(--clear-background-color);
+                border-left: var(--lcars-inner-radius) solid var(--clear-background-color);
                 border-bottom-left-radius: var(--lcars-inner-radius);
                 margin-bottom: calc(-1 * var(--lcars-inner-radius) + 1px);
                 width: calc(100% - var(--lcars-inner-radius) + 1px);
@@ -199,7 +198,7 @@ LCARS-Lite (Sections):
           }
         hui-grid-card $: |
           #root {
-            background-color: var(--lovelace-background);
+            background-color: var(--clear-background-color);
             * { background-color: var(--lcars-bar-color); }
           }
       hui-view-badges $: |
