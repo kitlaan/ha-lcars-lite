@@ -16,6 +16,12 @@ LCARS-Lite (Masonry):
 
   my-info-bar-color: "#b788dd"
 
+  # default is for DARK, so here are the custom override LIGHT values
+  modes:
+    light:
+      lcars-bar-button-color: "#f3f3f3"
+      paper-slider-active-color: "#062d4f"
+
   # SIZES OF LCARS BORDERS
   lcars-left-border: 32px
   lcars-top-border: 10px
