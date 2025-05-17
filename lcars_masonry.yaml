@@ -44,6 +44,7 @@ LCARS-Lite (Masonry):
   ha-card-border-color: var(--divider-color)
   ha-card-border-style: solid
 
+  ha-font-family-body: Antonio
   primary-font-family: Antonio
   paper-font-common-base_-_font-family: var(--primary-font-family)
   paper-font-common-code_-_font-family: var(--primary-font-family)

@@ -52,6 +52,7 @@ LCARS-Lite (Sections):
   ha-section-grid-row-gap: var(--lcars-padding)
   ha-section-grid-column-gap: var(--lcars-padding)
 
+  ha-font-family-body: Antonio
   primary-font-family: Antonio
   paper-font-common-base_-_font-family: var(--primary-font-family)
   paper-font-common-code_-_font-family: var(--primary-font-family)
